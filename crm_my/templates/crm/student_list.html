@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+<title>这是学生页面</title>
+{% endblock %}
+
+{% block content %}
+      <h1 style="text-align: center">{{ title }}</h1>
+
+<div class="bs-example" data-example-id="hoverable-table">
+    <table class="table table-hover table-bordered table-condensed">
+      <thead style="background-color: #4cae4c">
+        <tr>
+          <th>序号</th>
+          <th>姓名</th>
+          <th>出生日期</th>
+          <th>QQ</th>
+          <th>手机号</th>
+          <th>教室</th>
+          <th>课程</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for student in  all_student %}
+        <tr>
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.birthday }}</td>
+          <td>{{ student.qq }}</td>
+          <td>{{ student.phone }}</td>
+          <td>{{ student.room }}</td>
+          <td>{{ student.course }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>这是课程页面</title>
+{% endblock %}
+
+
+{% block content %}
+      <h1 style="text-align: center">{{ title }}</h1>
+
+<div class="bs-example" data-example-id="hoverable-table">
+    <table class="table table-hover table-bordered table-condensed">
+      <thead style="background-color: #4cae4c">
+        <tr>
+          <th>序号</th>
+          <th>课程名</th>
+          <th>课程简介</th>
+          <th>课程周期</th>
+          <th>讲师</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for course in  all_course %}
+        <tr>
+          <td>{{ course.id }}</td>
+          <td>{{ course.name }}</td>
+          <td>{{ course.intro }}</td>
+          <td>{{ course.cycle }}</td>
+          <td>{{ course.lecturer }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+{% endblock %}
